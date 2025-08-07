@@ -1,0 +1,28 @@
+---
+const { title = "Hamza Zaman — Data Science Portfolio", description = "Projects in Python, SQL, Power BI" } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="stylesheet" href="/styles.css" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+  </head>
+  <body>
+    <main class="container">
+      <slot />
+      <footer class="footer">
+        <div>© <span id="y"></span> Hamza Zaman</div>
+        <div class="links">
+          <a href="mailto:you@example.com">Email</a>
+          <a href="https://www.linkedin.com/in/your-handle/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/HamzaZaman" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </footer>
+      <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+    </main>
+  </body>
+</html>
