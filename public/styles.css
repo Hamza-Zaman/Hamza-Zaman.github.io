@@ -90,3 +90,27 @@ img.thumb {
 }
 .footer a { color: var(--text); text-decoration: none; }
 .muted { color: var(--muted); }
+
+/* ——— Widen the page ——— */
+.container,
+.nav-inner { 
+  max-width: 1280px;             /* was 1120 */
+}
+
+@media (min-width: 1400px){
+  .container,
+  .nav-inner { max-width: 1440px; }   /* breathe on big monitors */
+}
+
+/* ——— Denser grid on wide screens ——— */
+@media (min-width: 1400px){
+  .grid { grid-template-columns: repeat(4, minmax(0,1fr)); }  /* 1 → 2 → 3 → 4 cols */
+}
+
+/* ——— Slightly larger, fluid heading & tighter spacing ——— */
+h1 { font-size: clamp(36px, 4vw, 56px); }
+.section-title { margin: 28px 0 12px; }   /* a bit tighter */
+
+/* Optional: make cards a hair roomier so it feels premium */
+.card { padding: 18px; }
+
