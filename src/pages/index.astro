@@ -1,48 +1,132 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const projects = [
-  {
-    title: "Customer Churn Prediction",
-    summary: "XGBoost model to flag at-risk customers; AUC 0.87 and 7% retention lift.",
-    tech: ["Python", "scikit-learn", "XGBoost"],
-    href: "/projects/churn-model",
-    img: "https://picsum.photos/seed/churn/800/400",
-    code: "https://github.com/HamzaZaman/churn-model"
-  },
-  {
-    title: "Power BI Sales Insights",
-    summary: "Automated reporting cut weekly work from 3h to 15m.",
-    tech: ["Power BI", "DAX", "SQL"],
-    href: "/projects/power-bi-sales",
-    img: "https://picsum.photos/seed/pbi/800/400",
-    code: "https://github.com/HamzaZaman/powerbi-sales"
-  }
+const contact = [
+  ["Work authorisation","Eligible to work in the UK (open to relocation)"],
+  ["Location","London, United Kingdom"],
+  ["Email","hamzazaman04@gmail.com"],
+  ["LinkedIn","linkedin.com/in/hamza-zaman-data"],
+  ["GitHub","github.com/hamza-zaman"]
+];
+
+const stack = {
+  "Analyst Core": [
+    "SQL (T-SQL, window funcs, CTEs)",
+    "Power BI (DAX, Power Query/M)",
+    "Excel (Power Query, Pivot, VBA basics)",
+    "Python for analysis (pandas, NumPy)"
+  ],
+  "DS / ML": [
+    "scikit-learn, XGBoost/LightGBM",
+    "Feature engineering, CV, ROC/AUC",
+    "Time-series & forecasting",
+    "Experiment tracking (MLflow)"
+  ],
+  "Modern AI / NLP": [
+    "LLMs (open-source: Llama/Mistral)",
+    "RAG pipelines (LangChain/LlamaIndex)",
+    "Vector DBs (FAISS / pgvector / Chroma)",
+    "Prompt engineering, eval & guardrails"
+  ],
+  "Data Eng & Ops": [
+    "APIs (REST/GraphQL), ETL in Python",
+    "Azure SQL, star schemas",
+    "Git, CI/CD (GitHub Actions), Docker (basic)",
+    "Azure ML / SageMaker (exposure)"
+  ]
+};
+
+const soft = [
+  "Stakeholder communication & expectation setting",
+  "KPI design, experimentation, and measurement",
+  "Data storytelling for non-technical audiences",
+  "Prioritisation & delivery under time constraints",
+  "Data quality, governance, and GDPR awareness",
+  "Coaching & enabling self-serve analytics"
+];
+
+const outcomes = [
+  "Reporting time: 3h → 15m (automation, Power BI + Python ETL)",
+  "Decisions 40% faster (API-powered dashboards: monday.com, GA, Hootsuite, Cvent)",
+  "£50k+ savings (spend/variance insights in Power BI)",
+  "Revenue +£10k/week (GA Trainline analysis, process fixes)",
+  "95% availability during COVID (demand forecasting)"
 ];
 ---
-<Layout>
+
+<Layout title="Hamza Zaman — Resume" description="Analyst-to-Scientist skill set, commercial outcomes, and projects">
   <section class="hero">
-    <h1>Hi, I’m Hamza Zaman.</h1>
-    <p class="sub">Data Analyst / Data Scientist. I turn messy data into clear decisions.</p>
+    <h1>Hamza Zaman</h1>
+    <p class="sub">Data Analyst ↔ Data Scientist — SQL • Power BI • Python • ML/NLP/LLMs</p>
     <div class="ctas">
-      <a class="button" href="#projects">See Projects</a>
-      <a class="button secondary" href="mailto:you@example.com">Contact</a>
+      <a class="button" href="/#projects">See Portfolio</a>
+      <a class="button secondary" href="mailto:hamzazaman04@gmail.com">Contact</a>
     </div>
   </section>
 
-  <h2 id="projects" class="section-title">Projects</h2>
+  <h2 class="section-title">Snapshot</h2>
   <div class="grid">
-    {projects.map(p => (
+    {contact.map(([k,v]) => (
       <article class="card">
-        <a href={p.href}><img class="thumb" src={p.img} alt={p.title} loading="lazy" /></a>
-        <h3><a href={p.href} style="text-decoration:none; color:inherit">{p.title}</a></h3>
-        <p>{p.summary}</p>
-        <div class="badges">{p.tech.map(t => <span class="badge">{t}</span>)}</div>
-        <div class="ctas">
-          <a class="button" href={p.href}>Case Study</a>
-          <a class="button secondary" href={p.code} target="_blank" rel="noopener">Code</a>
-        </div>
+        <h3 style="margin:0 0 4px 0; font-size:14px; color:#9ca3af">{k}</h3>
+        <p style="margin:0">{v}</p>
       </article>
     ))}
   </div>
+
+  <h2 class="section-title">Tech stack for commercial work</h2>
+  <div class="grid">
+    {Object.entries(stack).map(([group, items]) => (
+      <article class="card">
+        <h3 style="margin:0 0 6px 0">{group}</h3>
+        <ul style="margin:8px 0 0 18px">
+          {items.map(i => <li>{i}</li>)}
+        </ul>
+      </article>
+    ))}
+  </div>
+
+  <h2 class="section-title">Soft skills that ship value</h2>
+  <div class="badges">
+    {soft.map(s => <span class="badge">{s}</span>)}
+  </div>
+
+  <h2 class="section-title">Outcomes</h2>
+  <div class="grid">
+    {outcomes.map(o => (
+      <article class="card"><p style="margin:0">{o}</p></article>
+    ))}
+  </div>
+
+  <h2 class="section-title">Selected projects</h2>
+  <div class="grid">
+    <article class="card">
+      <h3 style="margin:0 0 6px 0">London Fire Brigade Incident Analytics</h3>
+      <div class="muted" style="margin-bottom:8px">Python, scikit-learn</div>
+      <ul>
+        <li>Classification & clustering to flag false alarms; ~20% cost premium exposed.</li>
+        <li>Actions cut avoidable call-outs by ~33% (deployment planning).</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3 style="margin:0 0 6px 0">Osteoporosis Fracture-Risk Prediction</h3>
+      <div class="muted" style="margin-bottom:8px">Python, scikit-learn</div>
+      <ul>
+        <li>Benchmarked RF/KNN/LogReg; RF hit ~99% accuracy on 169-patient set.</li>
+        <li>Top factors: prior fractures, T-score, smoking (feature importance).</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3 style="margin:0 0 6px 0">Master’s Thesis — NLP Lip-Reading</h3>
+      <div class="muted" style="margin-bottom:8px">TensorFlow, Seq2Seq (GRU-attention)</div>
+      <ul>
+        <li>Optimised on 45k LRS2 sentences (TPU); phoneme-viseme features.</li>
+        <li>~3% WER and 0.92 BLEU (~+15 pp vs baseline).</li>
+      </ul>
+    </article>
+  </div>
+
+  <style>
+    .muted { color:#9ca3af; }
+  </style>
 </Layout>
