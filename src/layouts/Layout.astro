@@ -1,5 +1,5 @@
 ---
-const { title = "Hamza Zaman — Data Science Portfolio", description = "Projects in Python, SQL, Power BI" } = Astro.props;
+const { title = "Hamza Zaman — Data Science Portfolio", description = "Projects in Python, SQL, and Power BI with ML/NLP/LLMs" } = Astro.props;
 ---
 <html lang="en">
   <head>
@@ -7,11 +7,21 @@ const { title = "Hamza Zaman — Data Science Portfolio", description = "Project
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="stylesheet" href="/styles.css" />
+    <meta name="theme-color" content="#f7fafc" />
+    <meta name="color-scheme" content="light" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+
+    <!-- Fonts (light, modern) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- Site styles -->
+    <link rel="stylesheet" href="/styles.css" />
   </head>
-    <body>
+  <body>
     <header class="nav">
       <div class="nav-inner">
         <a class="brand" href="/">Hamza Zaman</a>
@@ -22,8 +32,10 @@ const { title = "Hamza Zaman — Data Science Portfolio", description = "Project
         </nav>
       </div>
     </header>
+
     <main class="container">
       <slot />
+
       <footer class="footer">
         <div>© <span id="y"></span> Hamza Zaman</div>
         <div class="links">
@@ -32,7 +44,10 @@ const { title = "Hamza Zaman — Data Science Portfolio", description = "Project
           <a href="https://github.com/hamza-zaman" target="_blank" rel="noopener">GitHub</a>
         </div>
       </footer>
-      <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
     </main>
+
+    <script>
+      document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
