@@ -1,7 +1,7 @@
 ---
 const {
   title = "Hamza Zaman — Data Science Portfolio",
-  description = "Projects in Python, SQL, and Power BI with ML/NLP/LLMs"
+  description = "Data Analyst with MSc Data Science. Python, SQL, Power BI, ML/NLP."
 } = Astro.props;
 ---
 <html lang="en">
@@ -11,42 +11,40 @@ const {
 
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#f7fafc" />
-    <meta name="color-scheme" content="light" />
+    <meta name="theme-color" content="#0a0a0b" />
+    <meta name="color-scheme" content="dark" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
 
-    <!-- Fonts (light, modern) -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Site styles (served from /public). The ?v=4 busts caches -->
-    <link rel="stylesheet" href="/styles.css?v=4" />
+    <link rel="stylesheet" href="/styles.css?v=5" />
   </head>
   <body>
     <header class="nav">
       <div class="nav-inner">
         <a class="brand" href="/">Hamza Zaman</a>
-        <nav style="display:flex; gap:16px;">
+        <nav class="nav-links">
           <a href="/#projects">Projects</a>
-          <a href="/about">Resume</a>
           <a href="mailto:hamzazaman04@gmail.com">Contact</a>
         </nav>
       </div>
     </header>
 
-    <main class="container">
+    <main class="main">
       <slot />
       <footer class="footer">
-        <div>© <span id="y"></span> Hamza Zaman</div>
-        <div class="links">
+        <div>&copy; <span id="y"></span> Hamza Zaman</div>
+        <div class="footer-links">
           <a href="mailto:hamzazaman04@gmail.com">Email</a>
           <a href="https://www.linkedin.com/in/hamza-zaman-data/" target="_blank" rel="noopener">LinkedIn</a>
           <a href="https://github.com/hamza-zaman" target="_blank" rel="noopener">GitHub</a>
