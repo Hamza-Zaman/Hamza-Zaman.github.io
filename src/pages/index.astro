@@ -1,108 +1,130 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const skills = {
-  "Analytics": [
-    "SQL (T-SQL, window functions, CTEs)",
-    "Power BI (DAX, Power Query)",
-    "Excel (Power Query, Pivot Tables)",
-    "Python (pandas, NumPy)"
-  ],
-  "Machine Learning": [
-    "scikit-learn",
-    "Feature engineering & cross-validation",
-    "Time-series forecasting",
-    "Transformers & Seq2Seq"
-  ],
-  "Professional": [
-    "Stakeholder communication",
-    "KPI design & measurement",
-    "Data storytelling",
-    "GDPR & data governance"
-  ]
-};
-
 const projects = [
   {
     title: "Car Insurance Claim Prediction",
-    tech: "Python, XGBoost",
-    desc: "Gradient boosting model to estimate claim risk. Feature engineering improved premium accuracy and profitability metrics.",
+    tech: ["Python", "XGBoost", "Feature Engineering"],
+    result: "Improved Accuracy",
+    desc: "Built a gradient boosting model to estimate claim risk for auto policies. Engineered features from policyholder data that improved premium pricing accuracy and reduced loss ratios.",
     link: "/car_insurance",
     notebook: "/notebook/car_insurance.html"
   },
   {
     title: "London Fire Brigade Analytics",
-    tech: "Python, scikit-learn",
-    desc: "Classification and clustering to flag false alarms. Insights for deployment planning and resource allocation.",
+    tech: ["Python", "scikit-learn", "Clustering"],
+    result: "False Alarm Detection",
+    desc: "Developed classification and clustering models to identify false alarms in emergency calls. Delivered actionable insights for deployment planning and resource optimization.",
     link: "/lfb",
     notebook: "/notebook/lfb.html"
   },
   {
-    title: "Osteoporosis Fracture-Risk Prediction",
-    tech: "Python, scikit-learn",
-    desc: "Benchmarked KNN, Random Forest, Logistic Regression, and SVM. KNN achieved 88% accuracy with BMD and Age as top predictors.",
+    title: "Osteoporosis Fracture-Risk",
+    tech: ["Python", "scikit-learn", "KNN"],
+    result: "88% Accuracy",
+    desc: "Benchmarked KNN, Random Forest, Logistic Regression, and SVM models. Identified BMD and Age as top predictive factors using feature importance analysis.",
     link: "/ost",
     notebook: "/notebook/osteoporosis.html"
   },
   {
-    title: "NLP Lip-Reading (Master's Thesis)",
-    tech: "TensorFlow, Seq2Seq, GRU-attention",
-    desc: "Trained on 45k LRS2 sentences using phoneme-viseme features. Achieved ~3% WER and 0.92 BLEU score.",
+    title: "NLP Lip-Reading — Master's Thesis",
+    tech: ["TensorFlow", "Seq2Seq", "GRU-Attention"],
+    result: "0.92 BLEU Score",
+    desc: "Trained sequence-to-sequence model on 45K LRS2 sentences using TPU. Implemented phoneme-viseme features achieving ~3% WER, outperforming baseline by 15+ percentage points.",
     link: "/thesis",
     notebook: "/notebook/thesis.html"
   }
 ];
+
+const skills = {
+  "Data Analytics": {
+    icon: "📊",
+    items: ["SQL (T-SQL, CTEs, Window Functions)", "Power BI (DAX, Power Query)", "Excel (Pivot Tables, VBA)", "Python (pandas, NumPy)"]
+  },
+  "Machine Learning": {
+    icon: "🤖",
+    items: ["scikit-learn", "Feature Engineering & CV", "Time-Series Forecasting", "Transformers & Seq2Seq"]
+  },
+  "Professional": {
+    icon: "💼",
+    items: ["Stakeholder Communication", "KPI Design & Measurement", "Data Storytelling", "GDPR & Data Governance"]
+  }
+};
 ---
 
-<Layout title="Hamza Zaman — Data Analyst" description="Data Analyst with MSc Data Science based in London. Python, SQL, Power BI, ML/NLP.">
+<Layout title="Hamza Zaman — Data Analyst" description="Data Analyst with MSc Data Science. Building analytics solutions with Python, SQL, Power BI, and ML.">
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section class="hero">
-    <div class="hero-label">Data Analyst</div>
-    <h1>Hamza Zaman</h1>
-    <p class="hero-subtitle">
-      MSc Data Science graduate based in London.
-      Building analytics solutions with Python, SQL, and Power BI.
-    </p>
-    <div class="hero-links">
-      <a href="mailto:hamzazaman04@gmail.com">hamzazaman04@gmail.com</a>
-      <a href="https://www.linkedin.com/in/hamza-zaman-data/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/hamza-zaman" target="_blank" rel="noopener">GitHub</a>
+    <div class="hero-content">
+      <span class="hero-role">Data Analyst</span>
+      <h1>Hamza Zaman</h1>
+      <p class="hero-text">
+        MSc Data Science graduate turning complex data into clear business decisions.
+        I build predictive models and dashboards that help teams act faster and smarter.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="mailto:hamzazaman04@gmail.com" class="btn btn-secondary">Get in Touch</a>
+      </div>
+    </div>
+    <div class="stats-card">
+      <h3>Quick Overview</h3>
+      <div class="stat-row">
+        <span class="stat-label">Location</span>
+        <span class="stat-value">London, UK</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Education</span>
+        <span class="stat-value">MSc Data Science</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Work Status</span>
+        <span class="stat-value">UK Eligible</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-label">Availability</span>
+        <span class="stat-value">Open to Relocation</span>
+      </div>
     </div>
   </section>
 
-  <!-- Info -->
-  <section class="section">
-    <div class="info-grid">
-      <div class="info-item">
-        <div class="info-label">Location</div>
-        <div class="info-value">London, UK</div>
-      </div>
-      <div class="info-item">
-        <div class="info-label">Work Status</div>
-        <div class="info-value">Eligible to work in UK</div>
-      </div>
-      <div class="info-item">
-        <div class="info-label">Education</div>
-        <div class="info-value">MSc Data Science</div>
-      </div>
-      <div class="info-item">
-        <div class="info-label">Open To</div>
-        <div class="info-value">Relocation</div>
-      </div>
+  <!-- Projects Section -->
+  <section class="section" id="projects">
+    <div class="section-header">
+      <h2 class="section-title">Featured Projects</h2>
+      <span class="section-subtitle">Real problems, measurable results</span>
+    </div>
+    <div class="projects-grid">
+      {projects.map(project => (
+        <article class="project-card">
+          <div class="project-header">
+            <h3 class="project-title">{project.title}</h3>
+            <span class="project-result">{project.result}</span>
+          </div>
+          <div class="project-tech">
+            {project.tech.map(t => <span class="tech-tag">{t}</span>)}
+          </div>
+          <p class="project-desc">{project.desc}</p>
+          <div class="project-links">
+            <a href={project.link} class="project-link primary">View Details</a>
+            <a href={project.notebook} target="_blank" rel="noopener" class="project-link secondary">Notebook</a>
+          </div>
+        </article>
+      ))}
     </div>
   </section>
 
-  <!-- Skills -->
+  <!-- Skills Section -->
   <section class="section">
     <div class="section-header">
-      <div class="section-label">Expertise</div>
-      <h2 class="section-title">Skills</h2>
+      <h2 class="section-title">Technical Skills</h2>
+      <span class="section-subtitle">Tools I use to deliver value</span>
     </div>
-    <div class="skills-grid">
-      {Object.entries(skills).map(([group, items]) => (
-        <div class="skill-group">
-          <h3>{group}</h3>
+    <div class="skills-container">
+      {Object.entries(skills).map(([name, { icon, items }]) => (
+        <div class="skill-card">
+          <h3><span class="skill-icon">{icon}</span> {name}</h3>
           <ul class="skill-list">
             {items.map(item => <li>{item}</li>)}
           </ul>
@@ -111,27 +133,24 @@ const projects = [
     </div>
   </section>
 
-  <!-- Projects -->
-  <section class="section" id="projects">
-    <div class="section-header">
-      <div class="section-label">Portfolio</div>
-      <h2 class="section-title">Projects</h2>
+  <!-- Info Bar -->
+  <div class="info-bar">
+    <div class="info-item">
+      <div class="info-label">Email</div>
+      <div class="info-value"><a href="mailto:hamzazaman04@gmail.com">hamzazaman04@gmail.com</a></div>
     </div>
-    <div class="projects-list">
-      {projects.map(project => (
-        <article class="project">
-          <div class="project-content">
-            <h3 class="project-title">{project.title}</h3>
-            <div class="project-tech">{project.tech}</div>
-            <p class="project-desc">{project.desc}</p>
-          </div>
-          <div class="project-links">
-            <a class="project-link primary" href={project.link}>View</a>
-            <a class="project-link" href={project.notebook} target="_blank" rel="noopener">Notebook</a>
-          </div>
-        </article>
-      ))}
+    <div class="info-item">
+      <div class="info-label">LinkedIn</div>
+      <div class="info-value"><a href="https://www.linkedin.com/in/hamza-zaman-data/" target="_blank">hamza-zaman-data</a></div>
     </div>
-  </section>
+    <div class="info-item">
+      <div class="info-label">GitHub</div>
+      <div class="info-value"><a href="https://github.com/hamza-zaman" target="_blank">hamza-zaman</a></div>
+    </div>
+    <div class="info-item">
+      <div class="info-label">Open To</div>
+      <div class="info-value">Full-time Roles</div>
+    </div>
+  </div>
 
 </Layout>
