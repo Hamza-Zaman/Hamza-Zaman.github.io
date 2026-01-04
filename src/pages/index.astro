@@ -1,138 +1,137 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const contact = [
-  ["Work authorisation","Eligible to work in the UK (open to relocation)"],
-  ["Location","London, United Kingdom"],
-  ["Email","hamzazaman04@gmail.com"],
-  ["LinkedIn","linkedin.com/in/hamza-zaman-data"],
-  ["GitHub","github.com/hamza-zaman"]
-];
-
-const stack = {
-  "Analyst Core": [
-    "SQL (T-SQL, window funcs, CTEs)",
-    "Power BI (DAX, Power Query/M)",
-    "Excel (Power Query, Pivot, VBA basics)",
-    "Python for analysis (pandas, NumPy)"
+const skills = {
+  "Analytics": [
+    "SQL (T-SQL, window functions, CTEs)",
+    "Power BI (DAX, Power Query)",
+    "Excel (Power Query, Pivot Tables)",
+    "Python (pandas, NumPy)"
   ],
-  "DS / ML / NLP": [
+  "Machine Learning": [
     "scikit-learn",
-    "Feature engineering, CV, ROC/AUC",
-    "Time-series & forecasting",
-    "Transformer, Seq2Seq"
+    "Feature engineering & cross-validation",
+    "Time-series forecasting",
+    "Transformers & Seq2Seq"
+  ],
+  "Professional": [
+    "Stakeholder communication",
+    "KPI design & measurement",
+    "Data storytelling",
+    "GDPR & data governance"
   ]
 };
 
-const soft = [
-  "Stakeholder communication & expectation setting",
-  "KPI design, experimentation, and measurement",
-  "Data storytelling for non-technical audiences",
-  "Prioritisation & delivery under time constraints",
-  "Data quality, governance, and GDPR awareness",
-  "Coaching & enabling self-serve analytics"
+const projects = [
+  {
+    title: "Car Insurance Claim Prediction",
+    tech: "Python, XGBoost",
+    desc: "Gradient boosting model to estimate claim risk. Feature engineering improved premium accuracy and profitability metrics.",
+    link: "/car_insurance",
+    notebook: "/notebook/car_insurance.html"
+  },
+  {
+    title: "London Fire Brigade Analytics",
+    tech: "Python, scikit-learn",
+    desc: "Classification and clustering to flag false alarms. Insights for deployment planning and resource allocation.",
+    link: "/lfb",
+    notebook: "/notebook/lfb.html"
+  },
+  {
+    title: "Osteoporosis Fracture-Risk Prediction",
+    tech: "Python, scikit-learn",
+    desc: "Benchmarked KNN, Random Forest, Logistic Regression, and SVM. KNN achieved 88% accuracy with BMD and Age as top predictors.",
+    link: "/ost",
+    notebook: "/notebook/osteoporosis.html"
+  },
+  {
+    title: "NLP Lip-Reading (Master's Thesis)",
+    tech: "TensorFlow, Seq2Seq, GRU-attention",
+    desc: "Trained on 45k LRS2 sentences using phoneme-viseme features. Achieved ~3% WER and 0.92 BLEU score.",
+    link: "/thesis",
+    notebook: "/notebook/thesis.html"
+  }
 ];
-
 ---
 
-<Layout title="Hamza Zaman — Resume" description="Analyst-to-Scientist skill set, commercial outcomes, and projects">
+<Layout title="Hamza Zaman — Data Analyst" description="Data Analyst with MSc Data Science based in London. Python, SQL, Power BI, ML/NLP.">
+
+  <!-- Hero -->
   <section class="hero">
+    <div class="hero-label">Data Analyst</div>
     <h1>Hamza Zaman</h1>
-    <p class="sub">Data Analyst with MSc Data Science from London</p>
-    <div class="ctas">
-      <a class="button" href="/#projects">See Portfolio</a>
-      <a class="button secondary" href="mailto:hamzazaman04@gmail.com">Contact</a>
+    <p class="hero-subtitle">
+      MSc Data Science graduate based in London.
+      Building analytics solutions with Python, SQL, and Power BI.
+    </p>
+    <div class="hero-links">
+      <a href="mailto:hamzazaman04@gmail.com">hamzazaman04@gmail.com</a>
+      <a href="https://www.linkedin.com/in/hamza-zaman-data/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/hamza-zaman" target="_blank" rel="noopener">GitHub</a>
     </div>
   </section>
 
-  <h2 class="section-title">Snapshot</h2>
-  <div class="grid">
-    {contact.map(([k,v]) => (
-      <article class="card">
-        <h3 style="margin:0 0 4px 0; font-size:14px; color:#9ca3af">{k}</h3>
-        <p style="margin:0">{v}</p>
-      </article>
-    ))}
-  </div>
-
-  <h2 class="section-title">Tech stack for commercial work</h2>
-  <div class="grid">
-    {Object.entries(stack).map(([group, items]) => (
-      <article class="card">
-        <h3 style="margin:0 0 6px 0">{group}</h3>
-        <ul style="margin:8px 0 0 18px">
-          {items.map(i => <li>{i}</li>)}
-        </ul>
-      </article>
-    ))}
-  </div>
-
-  <h2 class="section-title">Soft skills that ship value</h2>
-  <div class="badges">
-    {soft.map(s => <span class="badge">{s}</span>)}
-  </div>
-
-    <h2 id="projects" class="section-title">Selected projects</h2>
-  <div class="grid">
-
-    <!-- Car Insurance -->
-    <article class="card">
-      <h3 style="margin:0 0 6px 0">Car Insurance Claim Prediction</h3>
-      <div class="muted" style="margin-bottom:8px">Python, XGBoost</div>
-      <ul>
-        <li>Gradient boosting model to estimate claim risk for personal auto policies.</li>
-        <li>Feature engineering improved premium accuracy and profitability.</li>
-      </ul>
-      <div class="ctas" style="margin-top:8px">
-        <a class="button" href="/car_insurance">Open project</a>
-        <a class="button secondary" href="/notebook/car_insurance.html" target="_blank" rel="noopener">Open notebook</a>
+  <!-- Info -->
+  <section class="section">
+    <div class="info-grid">
+      <div class="info-item">
+        <div class="info-label">Location</div>
+        <div class="info-value">London, UK</div>
       </div>
-    </article>
-
-<!-- LFB -->
-    <article class="card">
-      <h3 style="margin:0 0 6px 0">London Fire Brigade Incident Analytics</h3>
-      <div class="muted" style="margin-bottom:8px">Python, scikit-learn</div>
-      <ul>
-        <li>Classification & clustering to flag false alarms</li>
-        <li>Insights on deployment planning</li>
-      </ul>
-      <div class="ctas" style="margin-top:8px">
-        <a class="button" href="/lfb">Open project</a>
-        <a class="button secondary" href="/notebook/lfb.html" target="_blank" rel="noopener">Open notebook</a>
+      <div class="info-item">
+        <div class="info-label">Work Status</div>
+        <div class="info-value">Eligible to work in UK</div>
       </div>
-    </article>
-
-    <!-- Osteoporosis -->
-    <article class="card">
-      <h3 style="margin:0 0 6px 0">Osteoporosis Fracture-Risk Prediction</h3>
-      <div class="muted" style="margin-bottom:8px">Python, scikit-learn</div>
-      <ul>
-        <li>Benchmarked KNN, Random Forest, Logistic Regression, and SVM models; KNN (k=7) achieved the highest accuracy at 88% on the balanced dataset.</li>
-        <li>Top predictive factors identified from Random Forest feature importance were BMD and Age.</li>
-      </ul>
-      <div class="ctas" style="margin-top:8px">
-        <a class="button" href="/ost">Open project</a>
-        <a class="button secondary" href="/notebook/osteoporosis.html" target="_blank" rel="noopener">Open notebook</a>
+      <div class="info-item">
+        <div class="info-label">Education</div>
+        <div class="info-value">MSc Data Science</div>
       </div>
-    </article>
-
-    <!-- Thesis -->
-    <article class="card">
-      <h3 style="margin:0 0 6px 0">Master’s Thesis — NLP Lip-Reading</h3>
-      <div class="muted" style="margin-bottom:8px">TensorFlow, Seq2Seq (GRU-attention)</div>
-      <ul>
-        <li>Optimised on 45k LRS2 sentences (TPU); phoneme-viseme features.</li>
-        <li>~3% WER and 0.92 BLEU (~+15 pp vs baseline).</li>
-      </ul>
-      <div class="ctas" style="margin-top:8px">
-        <a class="button" href="/thesis">Open project</a>
-        <a class="button secondary" href="/notebook/thesis.html" target="_blank" rel="noopener">Open notebook</a>
+      <div class="info-item">
+        <div class="info-label">Open To</div>
+        <div class="info-value">Relocation</div>
       </div>
-    </article>
-  </div>
+    </div>
+  </section>
 
-  <style>
-    .muted { color:#9ca3af; }
-  </style>
+  <!-- Skills -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-label">Expertise</div>
+      <h2 class="section-title">Skills</h2>
+    </div>
+    <div class="skills-grid">
+      {Object.entries(skills).map(([group, items]) => (
+        <div class="skill-group">
+          <h3>{group}</h3>
+          <ul class="skill-list">
+            {items.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="section" id="projects">
+    <div class="section-header">
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-title">Projects</h2>
+    </div>
+    <div class="projects-list">
+      {projects.map(project => (
+        <article class="project">
+          <div class="project-content">
+            <h3 class="project-title">{project.title}</h3>
+            <div class="project-tech">{project.tech}</div>
+            <p class="project-desc">{project.desc}</p>
+          </div>
+          <div class="project-links">
+            <a class="project-link primary" href={project.link}>View</a>
+            <a class="project-link" href={project.notebook} target="_blank" rel="noopener">Notebook</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
 </Layout>
