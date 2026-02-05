@@ -1,0 +1,34 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="ESG 10-K Extraction (SEC EDGAR)">
+  <h1>ESG 10-K Extraction (SEC EDGAR)</h1>
+  <p>
+    This project focuses on reliably finding the latest 10-K filings and extracting ESG-relevant
+    sections from SEC EDGAR with a reproducible method.
+  </p>
+
+  <h2>Latest Extraction Method (Accurate)</h2>
+  <ol>
+    <li>
+      Query the SEC submissions endpoint for a company CIK (or map tickers to CIKs).
+    </li>
+    <li>
+      Filter <strong>forms = 10-K</strong> and sort by the newest <strong>filingDate</strong>.
+    </li>
+    <li>
+      Use the latest accession number to locate the primary document in the filing index.
+    </li>
+    <li>
+      Parse the filing HTML, then extract ESG sections using headings and keyword anchors
+      (e.g., “Sustainability,” “Climate,” “Human Capital,” “Governance”).
+    </li>
+  </ol>
+
+  <h2>Outcome</h2>
+  <ul>
+    <li>Accurate identification of the most recent 10-K filing.</li>
+    <li>Repeatable ESG section extraction with minimal manual review.</li>
+  </ul>
+</Layout>

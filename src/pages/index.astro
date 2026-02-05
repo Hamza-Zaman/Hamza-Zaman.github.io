@@ -33,6 +33,13 @@ const projects = [
     desc: "Trained sequence-to-sequence model on 45K LRS2 sentences using TPU. Implemented phoneme-viseme features achieving ~3% WER, outperforming baseline by 15+ percentage points.",
     link: "/thesis",
     notebook: "/notebook/thesis.html"
+  },
+  {
+    title: "ESG 10-K Extraction (SEC EDGAR)",
+    tech: ["Python", "SEC API", "Text Parsing"],
+    result: "Latest Filings Found",
+    desc: "Built a repeatable pipeline to locate the newest 10-K filings and extract ESG sections with high precision from SEC EDGAR data.",
+    link: "/esg_10k"
   }
 ];
 
@@ -108,7 +115,9 @@ const skills = {
           <p class="project-desc">{project.desc}</p>
           <div class="project-links">
             <a href={project.link} class="project-link primary">View Details</a>
-            <a href={project.notebook} target="_blank" rel="noopener" class="project-link secondary">Notebook</a>
+            {project.notebook && (
+              <a href={project.notebook} target="_blank" rel="noopener" class="project-link secondary">Notebook</a>
+            )}
           </div>
         </article>
       ))}
