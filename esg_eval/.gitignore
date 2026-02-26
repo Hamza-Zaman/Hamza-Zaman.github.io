@@ -1,0 +1,11 @@
+# Virtual environment
+.venv/
+
+# Cloned repos (too large to commit)
+edgar-crawler/
+10k-sentiment/
+py-sec-edgar/
+
+# Python cache
+__pycache__/
+*.pyc

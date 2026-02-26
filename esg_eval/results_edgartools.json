@@ -1,0 +1,19 @@
+{
+  "repo": "edgartools (dgunning/edgartools)",
+  "stars": 1700,
+  "license": "MIT",
+  "import_success": true,
+  "version": "?",
+  "public_api_count": 152,
+  "tenk_attributes": 22,
+  "esg_relevant_properties": [
+    "business",
+    "directors_officers_and_governance",
+    "risk_factors"
+  ],
+  "html_parser": false,
+  "offline_mode": true,
+  "py_files": 332,
+  "total_lines": 140610,
+  "network_test": "passed"
+}

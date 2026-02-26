@@ -1,0 +1,55 @@
+{
+  "repo": "py-sec-edgar (ryansmccoy/py-sec-edgar)",
+  "stars": 120,
+  "license": "MIT",
+  "py_files": 86,
+  "total_lines": 21837,
+  "import_success": false,
+  "dependency_count": 67,
+  "features": {
+    "cli": true,
+    "html_parsing": true,
+    "ai_integration": true
+  },
+  "genai_spine": {
+    "py_files": 74,
+    "total_lines": 15158
+  },
+  "test_files": 10,
+  "code_review": {
+    "approach": "Enterprise EDGAR framework with 4 workflows + GenAI integration",
+    "workflows": [
+      "Full Index",
+      "Daily",
+      "Monthly",
+      "RSS"
+    ],
+    "data_source": "SEC EDGAR (multi-workflow)",
+    "unique_feature": "GenAI Spine - provider-agnostic LLM service for SEC analysis",
+    "pros": [
+      "Enterprise-grade architecture",
+      "Multiple download workflows (full, daily, monthly, RSS)",
+      "GenAI integration for AI-powered analysis",
+      "Multi-provider LLM support (OpenAI, Claude, Ollama)",
+      "Clean async architecture",
+      "pip installable",
+      "MIT license"
+    ],
+    "cons": [
+      "Complex setup (many dependencies)",
+      "No direct ESG extraction",
+      "GenAI component is v0.1.0 (beta)",
+      "Main CLI seems incomplete in this repo",
+      "Heavy dependency footprint (openai, fastapi, uvicorn, etc.)",
+      "Requires LLM API keys for AI features"
+    ]
+  },
+  "assessment": {
+    "setup_difficulty": "HIGH (complex deps, multi-component)",
+    "code_quality": "HIGH (clean architecture, type hints, tests)",
+    "esg_capability": "LOW (no built-in ESG, but AI integration possible)",
+    "sec_integration": "HIGH (4 specialized workflows)",
+    "output_quality": "HIGH (structured extraction)",
+    "maintainability": "HIGH (active development, good practices)"
+  }
+}

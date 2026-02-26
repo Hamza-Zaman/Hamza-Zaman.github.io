@@ -1,0 +1,80 @@
+{
+  "repo": "10-K Sentiment Analysis (Mraghuvaran)",
+  "stars": 41,
+  "license": "Unknown",
+  "total_cells": 149,
+  "code_cells": 93,
+  "imports": [
+    "from IPython import display",
+    "from bs4 import BeautifulSoup",
+    "from bs4 import BeautifulSoup as bs",
+    "from collections import Counter",
+    "from gensim import corpora",
+    "from keras.layers import Dense, Flatten, LSTM, Conv1D, MaxPooling1D, Dropout, Activation",
+    "from keras.layers.embeddings import Embedding",
+    "from keras.models import Sequential",
+    "from keras.preprocessing.sequence import pad_sequences",
+    "from keras.preprocessing.text import Tokenizer",
+    "from matplotlib import pyplot as plt",
+    "from nltk import stem",
+    "from nltk.corpus import stopwords",
+    "from nltk.tokenize import RegexpTokenizer",
+    "from nltk.tokenize import TreebankWordTokenizer",
+    "from nltk.tokenize import TweetTokenizer",
+    "from nltk.tokenize import sent_tokenize",
+    "from nltk.util import ngrams",
+    "from pandas.plotting import scatter_matrix",
+    "from plotly import __version__",
+    "from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot",
+    "from plotly.offline import init_notebook_mode, iplot, plot",
+    "from scipy import stats",
+    "from scipy.sparse import hstack, csr_matrix",
+    "from sklearn import feature_selection"
+  ],
+  "total_code_lines": 1547,
+  "sec_references": 0,
+  "nlp_techniques": [
+    "CountVectorizer",
+    "RandomForest",
+    "TfidfVectorizer",
+    "logistic",
+    "negative",
+    "nltk",
+    "positive",
+    "sentiment",
+    "sklearn",
+    "xgboost"
+  ],
+  "code_review": {
+    "approach": "Dictionary-based + TF-IDF sentiment on 10-K filings",
+    "data_source": "SEC EDGAR (direct)",
+    "sections_targeted": [
+      "Business",
+      "MD&A",
+      "Risk Factors",
+      "Financial Data"
+    ],
+    "pros": [
+      "Direct SEC EDGAR integration",
+      "Targets key 10-K sections",
+      "Financial sentiment dictionary",
+      "End-to-end pipeline"
+    ],
+    "cons": [
+      "Not ESG-specific",
+      "Notebook-only",
+      "No error handling",
+      "No rate limiting",
+      "PhD project quality",
+      "No tests/CI"
+    ]
+  },
+  "assessment": {
+    "setup_difficulty": "MEDIUM",
+    "code_quality": "LOW-MEDIUM (notebook format)",
+    "esg_capability": "LOW (general sentiment)",
+    "sec_integration": "YES (direct)",
+    "output_quality": "MEDIUM",
+    "maintainability": "LOW (6 commits, no updates)"
+  }
+}
