@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="ESG Repo Evaluation — Open-Source SEC EDGAR Tools" description="Comprehensive evaluation of 5 open-source repos for ESG signal extraction from SEC EDGAR 10-K filings">
+  <section class="hero">
+    <h1>ESG Repo Evaluation</h1>
+    <p class="sub">Evaluated 5 open-source repositories for extracting ESG signals from SEC EDGAR 10-K filings. Tested 62 real filings with a 55-keyword ESG dictionary.</p>
+    <div class="ctas">
+      <a class="button" href="/notebook/esg_eval.html" target="_blank" rel="noopener">Open full report</a>
+    </div>
+  </section>
+
+  <iframe
+    src={"/notebook/esg_eval.html?v=" + Date.now()}
+    style="width:100%;height:75vh;border:1px solid #e5e7eb;border-radius:12px;background:#fff"
+    loading="lazy"
+  ></iframe>
+</Layout>
