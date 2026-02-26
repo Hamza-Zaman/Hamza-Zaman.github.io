@@ -1,0 +1,62 @@
+{
+  "repo": "ESG-BERT (mukut03/ESG-BERT)",
+  "stars": 142,
+  "license": "Apache-2.0",
+  "transformers_available": false,
+  "torch_available": false,
+  "code_review": {
+    "total_files": 4,
+    "python_files": 1,
+    "approach": "TorchServe deployment of BERT fine-tuned on ESG text corpus",
+    "model_source": "HuggingFace (nbroad/ESG-BERT)",
+    "categories": 26,
+    "category_list": [
+      "Business Ethics",
+      "Data Security",
+      "Access and Affordability",
+      "Customer Welfare",
+      "Selling Practices and Product Labeling",
+      "Physical Impacts of Climate Change",
+      "Product Quality and Safety",
+      "Employee Engagement Inclusion and Diversity",
+      "Employee Health and Safety",
+      "Human Rights and Community Relations",
+      "Labor Practices",
+      "Supply Chain Management",
+      "Waste and Hazardous Materials Management",
+      "Water and Wastewater Management",
+      "Air Quality",
+      "Ecological Impacts",
+      "Energy Management",
+      "GHG Emissions",
+      "Product Design and Lifecycle Management",
+      "Business Model Resilience",
+      "Competitive Behavior",
+      "Critical Incident Risk Management",
+      "Director Removal",
+      "Management of Legal and Regulatory Environment",
+      "Systemic Risk Management"
+    ],
+    "pros": [
+      "26 ESG categories",
+      "Domain-specific BERT",
+      "HuggingFace hosted",
+      "Apache 2.0"
+    ],
+    "cons": [
+      "Only 1 Python file",
+      "No SEC EDGAR integration",
+      "Requires TorchServe+JDK11",
+      "Stale (2020)",
+      "No preprocessing pipeline"
+    ]
+  },
+  "assessment": {
+    "setup_difficulty": "HIGH",
+    "code_quality": "LOW (1 handler file, no tests)",
+    "esg_capability": "HIGH (26 categories)",
+    "sec_integration": "NONE",
+    "output_quality": "MEDIUM (classification labels)",
+    "maintainability": "LOW (last updated 2020)"
+  }
+}
