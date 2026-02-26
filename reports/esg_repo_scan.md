@@ -59,3 +59,21 @@ Because of this, I could not perform a fair, evidence-based external repo review
 4. Compare extraction quality and stability with a common rubric.
 5. Return ranked recommendations with reproducible commands and artifacts.
 
+
+## Python execution follow-up (addressing review feedback)
+
+To validate executable code in this repository, I ran the local Python extractor script directly:
+
+```bash
+python scripts/esg_10k_extraction.py
+```
+
+Observed result: script executed, but live SEC fetches were blocked by proxy tunnel `403 Forbidden` for each company CIK.
+
+I then ran the script in offline demo mode to verify extraction logic and output formatting without network dependencies:
+
+```bash
+python scripts/esg_10k_extraction.py --offline-demo
+```
+
+Observed result: successful ESG sentence extraction for Apple, Alphabet, and Tesla demo text, with non-zero category counts and generated output file `esg_extraction_results.json`.
