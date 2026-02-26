@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="edgartools Code Evaluation — Deep Source Analysis" description="Comprehensive code evaluation of edgartools v5.17.1: 140K+ lines of Python, 21 dependencies, 657 classes, XBRL parsing, AI integration">
+  <section class="hero">
+    <h1>edgartools Code Evaluation</h1>
+    <p class="sub">Deep source analysis of the #1-ranked SEC EDGAR Python library. 140,585 lines of code, 332 files, 21 dependencies mapped to purpose.</p>
+    <div class="ctas">
+      <a class="button" href="/notebook/edgartools_eval.html" target="_blank" rel="noopener">Open full report</a>
+    </div>
+  </section>
+
+  <iframe
+    src={"/notebook/edgartools_eval.html?v=" + Date.now()}
+    style="width:100%;height:75vh;border:1px solid #e5e7eb;border-radius:12px;background:#fff"
+    loading="lazy"
+  ></iframe>
+</Layout>
